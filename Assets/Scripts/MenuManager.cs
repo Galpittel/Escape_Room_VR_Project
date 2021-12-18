@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     private AudioSource flip_sound;
     public Button button_Leaderboard;
     public Button button_flipBack;
+    public Button button_StartGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +60,6 @@ public class MenuManager : MonoBehaviour
         //leaderBoardTitle.SetActive(true);
         //rankingText.SetActive(true);
         //flip_btn.SetActive(true);
-
 
         button_Leaderboard.enabled = false;
         button_flipBack.enabled = true;

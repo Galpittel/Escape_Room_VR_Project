@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using CameraFading;
 
 public class Scene_Manager : MonoBehaviour
 {
     public Text rankingText;
     private AudioSource start_sound;
+    public Button button_StartGame;
     void Start()
     {
         start_sound = gameObject.GetComponent<AudioSource>();
@@ -26,6 +28,8 @@ public class Scene_Manager : MonoBehaviour
     {
         //int prevUserId = PlayerPrefs.GetInt("UserId", 0); //If no Int of this name exists, the default is 0.
         //PlayerPrefs.SetInt("UserId", prevUserId + 1);
+
+        //Add try and catch?
         string resulted_ranking = string.Empty;
         string path = System.IO.Path.GetFullPath("Assets\\OurLogs\\log.csv");
         StreamReader strReader = new StreamReader(path);
@@ -47,7 +51,7 @@ public class Scene_Manager : MonoBehaviour
     }
     public void LoadFirstRoom()
     {
-        Invoke("LoadRoom", 2);
+        Invoke("LoadRoom", 3f);
     }
     public void LoadRoom()
     {
@@ -65,4 +69,15 @@ public class Scene_Manager : MonoBehaviour
     {
         start_sound.Play();
     }
+    public void DisableStartBtn()
+    {
+        button_StartGame.enabled = false;
+    }
+    public void FadeCameraTransition()
+    {
+        
+        CameraFade.Out(2f);
+        CameraFade.Alpha = 1f;
+    }
+
 }
