@@ -9,9 +9,10 @@ using UnityEngine.UI;
 public class Scene_Manager : MonoBehaviour
 {
     public Text rankingText;
+    private AudioSource start_sound;
     void Start()
     {
-
+        start_sound = gameObject.GetComponent<AudioSource>();
         Load_RankingData_From_CSV();
     }
 
@@ -59,5 +60,9 @@ public class Scene_Manager : MonoBehaviour
         #else
                     Application.Quit();
         #endif
+    }
+    public void PlayStartGameSound()
+    {
+        start_sound.Play();
     }
 }
