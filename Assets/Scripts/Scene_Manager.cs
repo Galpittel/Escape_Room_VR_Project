@@ -44,7 +44,7 @@ public class Scene_Manager : MonoBehaviour
                 break;
             }
             var data_values = data_String.Split(',');
-            Debug.Log(data_values[0].ToString() + " " + data_values[1].ToString());
+            //Debug.Log(data_values[0].ToString() + " " + data_values[1].ToString());
             resulted_ranking += "User " + data_values[0].ToString() + " : " + data_values[1].ToString() + "\r\n";
         }
         rankingText.text = resulted_ranking;
