@@ -19,14 +19,14 @@ public class LocomotionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (leftTelporterRay)
-        {
-            leftTelporterRay.gameObject.SetActive(checkIfActivated(leftTelporterRay));
-        }
-        if (rightTelporterRay)
-        {
-            rightTelporterRay.gameObject.SetActive(checkIfActivated(rightTelporterRay));
-        }
+        //if (leftTelporterRay)
+        //{
+        //    leftTelporterRay.gameObject.SetActive(checkIfActivated(leftTelporterRay));
+        //}
+        //if (rightTelporterRay)
+        //{
+        //    rightTelporterRay.gameObject.SetActive(checkIfActivated(rightTelporterRay));
+        //}
 
     }
 }
