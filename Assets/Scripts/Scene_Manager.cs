@@ -15,7 +15,7 @@ public class Scene_Manager : MonoBehaviour
     void Start()
     {
         start_sound = gameObject.GetComponent<AudioSource>();
-        Load_RankingData_From_CSV();
+        //Load_RankingData_From_CSV();
     }
 
     // Update is called once per frame
