@@ -8,6 +8,8 @@ public class Key_Interactions : MonoBehaviour
     public GameObject key_hole;
     public Animator door_animator;
     public GameObject spare_key;
+    public GameObject gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,15 @@ public class Key_Interactions : MonoBehaviour
             this.gameObject.SetActive(false);
             spare_key.SetActive(true);
             door_animator.SetTrigger("OpenDoor");
+
+            //Finished Task 1
+
+            //We need to animate Teleportation anchors, and write to file (how?) the time of completion of task 1
+            gameManager.GetComponent<Game_Manager>().ShowTeleports();
+
+            //my_manager.ShowTeleports();
+
+
             //XRGrabInteractable.Destroy(this);
             //Destroy(this.GetComponent<XRGrabInteractable>());
             //this.gameObject.GetComponent<Rigidbody>().useGravity = false;
