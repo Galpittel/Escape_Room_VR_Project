@@ -11,6 +11,7 @@ public class Keypad : MonoBehaviour
 
     public UnityEvent onPressed, onReleased;
 
+    private AudioSource fountainSound;
     private bool isPressed;
     private Vector3 startPos;
     private ConfigurableJoint joint;
@@ -26,6 +27,7 @@ public class Keypad : MonoBehaviour
     {
         fountain = GameObject.Find("Fountain_01");
         fountainAnimator = fountain.GetComponent<Animator>();
+        fountainSound = fountain.GetComponent<AudioSource>();
         userPassword = GameObject.Find("Input_menu_obj");
         startPos = transform.localPosition;
         joint = GetComponent<ConfigurableJoint>();
@@ -97,6 +99,7 @@ public class Keypad : MonoBehaviour
             FinalTeleport.SetActive(true);
             userPassword.GetComponent<UnityEngine.UI.Text>().text = "Correct";
             fountainAnimator.SetTrigger("fountainTrigger");
+            fountainSound.Play();
             //correct password
         }
         else

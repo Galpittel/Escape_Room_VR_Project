@@ -12,14 +12,9 @@ public class Obj_Data : ScriptableObject
     public int currentWeight;
     public int goalWeight = 100;
 
-    private GameObject ourBridge;
-
-    private Animator bridgeAnimator;
-
     void Awake()
     {
-        ourBridge = GameObject.Find("Bridge");
-        bridgeAnimator = ourBridge.GetComponent<Animator>();
+
     }
     public void Init()
     {
@@ -29,23 +24,6 @@ public class Obj_Data : ScriptableObject
     public void updateWeight(int weight)
     {
         currentWeight += weight;
-        Debug.Log("Current Weight is: " + currentWeight);
-        //checkGoal();
     }
 
-    public void removeWeight(int weight)
-    {
-        currentWeight -= weight;
-        Debug.Log("Current Weight is: " + currentWeight);
-        //checkGoal();
-    }
-
-    //private void checkGoal()
-    //{
-    //    if (currentWeight == goalWeight)
-    //    {
-    //        bridgeAnimator.SetTrigger("Bridge_anim");
-    //        Debug.Log("EQUAL");
-    //    }
-    //}
 }

@@ -31,6 +31,11 @@ public class phone_handler : MonoBehaviour
         }
     }
 
+    public void hangUp() //Will be called once phone is returned to socket. Select entered event of PhoneSocket.
+    {
+        dolly_source.Pause();
+    }
+
 
 
 
