@@ -5,14 +5,12 @@ using UnityEngine;
 public class Game_Manager : MonoBehaviour
 {
     public GameObject[] teleports;
+    public ScoreKeeper score_keeper;
 
     // Start is called before the first frame update
     void Start()
     {
-        //if (teleports == null)
-        //{
-        //    teleports = GameObject.FindGameObjectsWithTag("NewTeleport");
-        //}
+        //score_keeper.Initialize("moshe", null);
     }
 
     // Update is called once per frame
@@ -33,4 +31,9 @@ public class Game_Manager : MonoBehaviour
             tele.SetActive(true);
         }
     }
+
+    //public void updateScore(string level)
+    //{
+    //    score_keeper.AddScore(level);
+    //}
 }

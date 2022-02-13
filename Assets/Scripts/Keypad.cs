@@ -56,6 +56,8 @@ public class Keypad : MonoBehaviour
 
     private void Pressed()
     {
+        isPressed = true;
+
         if (transform.tag.Equals("number"))
         {
             userPassword.GetComponent<UnityEngine.UI.Text>().text += transform.name;
@@ -68,7 +70,6 @@ public class Keypad : MonoBehaviour
         {
             VerifyButtonPushed();
         }
-            isPressed = true;
         onPressed.Invoke();
         Debug.Log("is pressed");
 
