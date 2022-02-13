@@ -7,6 +7,7 @@ public class Keypad : MonoBehaviour
 {
     [SerializeField] private float threshold = 0.1f;
     [SerializeField] private float deadZone = 0.025f;
+    public GameObject FinalTeleport;
 
     public UnityEvent onPressed, onReleased;
 
@@ -18,7 +19,7 @@ public class Keypad : MonoBehaviour
     private GameObject fountain;
 
     private GameObject userPassword;
-    private string password = "0000";
+    private string password = "925";
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +94,8 @@ public class Keypad : MonoBehaviour
     {
         if (password.Equals(userPassword.GetComponent<UnityEngine.UI.Text>().text))
         {
-            userPassword.GetComponent<UnityEngine.UI.Text>().text = "Correct Password";
+            FinalTeleport.SetActive(true);
+            userPassword.GetComponent<UnityEngine.UI.Text>().text = "Correct";
             fountainAnimator.SetTrigger("fountainTrigger");
             //correct password
         }

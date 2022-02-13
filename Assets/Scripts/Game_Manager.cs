@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using CameraFading;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -36,4 +38,22 @@ public class Game_Manager : MonoBehaviour
     //{
     //    score_keeper.AddScore(level);
     //}
+
+    public void LoadSecondRoom()
+    {
+        Invoke("LoadRoom", 2f);
+    }
+
+    public void LoadRoom()
+    {
+        SceneManager.LoadScene("SecondRoom");
+    }
+
+    public void FadeCameraTransition()
+    {
+
+        CameraFade.Out(2f);
+        CameraFade.Alpha = 1f;
+    }
+
 }
