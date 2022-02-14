@@ -12,6 +12,7 @@ public class Obj_Data : ScriptableObject
     public int currentWeight;
     public int goalWeight = 100;
 
+    public bool goalReached = false;
     void Awake()
     {
 

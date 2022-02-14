@@ -10,6 +10,8 @@ TagManager:
   - Diamond
   - Crown
   - Bottle
+  - Fire
+  - SpiderWeb
   layers:
   - Default
   - TransparentFX

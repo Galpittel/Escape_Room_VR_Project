@@ -5,7 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Key_Interactions : MonoBehaviour
 {
-    public GameObject key_hole;
+    public GameObject first_key_hole;
+    public GameObject second_key_hole;
     public GameObject spare_key;
     public GameObject our_door;
     public GameObject gameManager;
@@ -50,7 +51,7 @@ public class Key_Interactions : MonoBehaviour
     //}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.Equals(key_hole))
+        if (other.gameObject.Equals(first_key_hole))
         {
             this.gameObject.SetActive(false);
             spare_key.SetActive(true);
@@ -61,10 +62,28 @@ public class Key_Interactions : MonoBehaviour
             //Finished Task 1
 
             //We need to animate Teleportation anchors, and write to file (how?) the time of completion of task 1
+
             gameManager.GetComponent<Game_Manager>().ShowTeleports();
+
 
             //gameManager.GetComponent<Game_Manager>().updateScore("LEVEL_NAME");
         }
+
+        if (other.gameObject.Equals(second_key_hole))
+        {
+            this.gameObject.SetActive(false);
+            spare_key.SetActive(true);
+            our_door.GetComponent<Animator>().SetTrigger("SecondDoor");
+            our_door.GetComponent<AudioSource>().Play();
+
+
+            //Finished Task 1
+
+            //We need to animate Teleportation anchors, and write to file (how?) the time of completion of task 1
+
+            gameManager.GetComponent<Game_Manager>().ShowTeleports();
+        }
+
 
         //if(other.gameObject)
     }

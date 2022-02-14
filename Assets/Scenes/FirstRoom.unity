@@ -14536,7 +14536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abafd9c8e7161054585a641a7930c4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key_hole: {fileID: 2043204418}
+  first_key_hole: {fileID: 2043204418}
+  second_key_hole: {fileID: 0}
   spare_key: {fileID: 898728595}
   our_door: {fileID: 770759009}
   gameManager: {fileID: 1070695833}

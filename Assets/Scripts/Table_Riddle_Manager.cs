@@ -15,6 +15,7 @@ public class Table_Riddle_Manager : MonoBehaviour
     public Text our_UI;
     public GameObject teleport1;
     public GameObject teleport2;
+    //private bool reachedGoal = false;
 
     //public GameObject[] go_arr; //GameObject array
     //private XRSocketInteractor socket_arr;
@@ -63,9 +64,9 @@ public class Table_Riddle_Manager : MonoBehaviour
 
     private void checkGoal()
     {
-        if (SO.currentWeight == SO.goalWeight && bridgeAnimator != null)
+        if (SO.currentWeight == SO.goalWeight && bridgeAnimator != null && !SO.goalReached)
         {
-
+            SO.goalReached = true;
             bridgeAnimator.SetTrigger("Bridge_anim");
             teleport1.SetActive(true);
             teleport2.SetActive(true); 
