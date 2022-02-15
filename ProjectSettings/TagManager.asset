@@ -12,6 +12,9 @@ TagManager:
   - Bottle
   - Fire
   - SpiderWeb
+  - Hammer
+  - Candle
+  - WineGlass
   layers:
   - Default
   - TransparentFX
@@ -35,7 +38,7 @@ TagManager:
   - 
   - Teleport
   - Interactable
-  - 
+  - Climb
   - 
   - 
   - 

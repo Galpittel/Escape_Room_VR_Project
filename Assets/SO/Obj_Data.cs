@@ -6,11 +6,11 @@ using UnityEngine;
 public class Obj_Data : ScriptableObject
 {
     public Dictionary<string, int> weight_dict = new Dictionary<string, int>() {
-        { "Crown", 50 }, { "Diamond", 25 }, { "Bottle", 10 }, { "Bone", 5 }, { "Wine_Glass", 20 }
+        { "Crown", 50 }, { "Diamond", 100 }, { "Bottle", 5 }, { "Hammer", 25 }, { "WineGlass", 30 }, {"Candle", 10}
     };
 
     public int currentWeight;
-    public int goalWeight = 100;
+    public int goalWeight = 250;
 
     public bool goalReached = false;
     void Awake()

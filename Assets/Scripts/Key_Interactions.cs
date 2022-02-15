@@ -85,7 +85,6 @@ public class Key_Interactions : MonoBehaviour
         }
 
 
-        //if(other.gameObject)
     }
 
     private void OnCollisionEnter(Collision other)
