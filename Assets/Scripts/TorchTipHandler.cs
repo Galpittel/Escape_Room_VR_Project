@@ -35,7 +35,6 @@ public class TorchTipHandler : MonoBehaviour
     //}
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("FIRE in TRIGGER!");
         if (other.gameObject.Equals(Fire_Collider))
         {
             foreach (ParticleSystem fire in torchFire)
@@ -46,7 +45,6 @@ public class TorchTipHandler : MonoBehaviour
         }
         if (other.tag.Equals("SpiderWeb") && torchFire[0].isPlaying && !webFire[0].isPlaying)
         {
-            Debug.Log("ORI3");
             foreach (ParticleSystem fire in webFire)
             {
                 fire.Play();
@@ -59,6 +57,9 @@ public class TorchTipHandler : MonoBehaviour
     void Delay()
     {
         spiderWeb.SetActive(false);
+        //NEW
+        key.GetComponent<Rigidbody>().isKinematic = false;
+        //End_New
         key.GetComponent<Rigidbody>().useGravity = true;
         key.GetComponent<XRGrabInteractable>().enabled = true;
     }

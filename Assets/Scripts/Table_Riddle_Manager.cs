@@ -70,7 +70,7 @@ public class Table_Riddle_Manager : MonoBehaviour
             bridgeAnimator.SetTrigger("Bridge_anim");
             teleport1.SetActive(true);
             teleport2.SetActive(true); 
-            Debug.Log("EQUAL");
+            //Debug.Log("EQUAL");
         }
     }
 

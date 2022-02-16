@@ -91,16 +91,28 @@ public class Key_Interactions : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad < 1.0f)
             return;
-
-
-        SFXPlayer.Instance.PlaySFX(key_sound, other.contacts[0].point, new SFXPlayer.PlayParameters()
+        //NEW 15.2.2022 - avoid making sound when touching with torch in spider web
+        if (other.gameObject.name != "Fakel_LP" && other.gameObject.name != "SpiderWeb_02" && other.gameObject.name != "Wall_04 (37)")
         {
-            Volume = 1.0f,
-            Pitch = Random.Range(0.8f, 1.2f),
-            SourceID = m_ID
-        }, 0.5f);
+            SFXPlayer.Instance.PlaySFX(key_sound, other.contacts[0].point, new SFXPlayer.PlayParameters()
+            {
+                Volume = 1.0f,
+                Pitch = Random.Range(0.8f, 1.2f),
+                SourceID = m_ID
+            }, 0.5f);
+        }
+
+        //Debug.Log("KEY Collided with: " + other.gameObject.name);
+        //SFXPlayer.Instance.PlaySFX(key_sound, other.contacts[0].point, new SFXPlayer.PlayParameters()
+        //{
+        //    Volume = 1.0f,
+        //    Pitch = Random.Range(0.8f, 1.2f),
+        //    SourceID = m_ID
+        //}, 0.5f);
+
 
     }
+
     public void EnableIsTrigger()
     {
         this.gameObject.GetComponent<MeshCollider>().isTrigger = true;
@@ -109,6 +121,6 @@ public class Key_Interactions : MonoBehaviour
     public void DisableIsTrigger()
     {
         this.gameObject.GetComponent<MeshCollider>().isTrigger = false;
-        
+
     }
 }

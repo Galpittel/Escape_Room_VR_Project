@@ -9,10 +9,11 @@ public class Lever_Manager : MonoBehaviour
 
     public GameObject[] lever_arr;
     [HideInInspector]
-    public bool isCorrect = true;
+    public bool isCorrect = false;
     public Text ourText;
     public GameObject ourLever;
     public Animator finalDoorAnimator;
+    private bool doorUnlocked = false;
     void Start()
     {
         
@@ -21,8 +22,10 @@ public class Lever_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isCorrect && ourLever.transform.rotation.x < -50f)
+
+        if (isCorrect && !doorUnlocked && ourLever.transform.eulerAngles.x < 310f && ourLever.transform.eulerAngles.x > 20f)
         {
+            doorUnlocked = true;
             ourText.text = "!!!!!";
             finalDoorAnimator.SetTrigger("OpenLastDoor");
         }
@@ -32,12 +35,10 @@ public class Lever_Manager : MonoBehaviour
         bool boolChecker = true;
         foreach (GameObject lever in lever_arr)
         {
-            //isCorrect = isCorrect && lever.GetComponent<Check_Lever_Input>().CheckAns();
             boolChecker = boolChecker && lever.GetComponent<Check_Lever_Input>().CheckAns();
             
         }
         isCorrect = boolChecker;
-        //ourText.text = isCorrect.ToString();
 
         if (isCorrect)
         {

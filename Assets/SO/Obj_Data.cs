@@ -6,7 +6,7 @@ using UnityEngine;
 public class Obj_Data : ScriptableObject
 {
     public Dictionary<string, int> weight_dict = new Dictionary<string, int>() {
-        { "Crown", 50 }, { "Diamond", 100 }, { "Bottle", 5 }, { "Hammer", 25 }, { "WineGlass", 30 }, {"Candle", 10}
+        { "Crown", 25 }, { "Diamond", 100 }, { "Bottle", 5 }, { "Crystal", 50 }, { "Ring", 30 }, {"Candle", 10}
     };
 
     public int currentWeight;

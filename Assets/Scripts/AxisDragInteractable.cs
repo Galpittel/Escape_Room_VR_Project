@@ -103,12 +103,12 @@ public class AxisDragInteractable : XRBaseInteractable
                     int posStep = Mathf.RoundToInt((targetPoint - m_StartPoint).magnitude / m_StepLength);
                     if (posStep != m_CurrentStep)
                     {
-                        //SFXPlayer.Instance.PlaySFX(SnapAudioClip, transform.position, new SFXPlayer.PlayParameters()
-                        //{
-                        //    Pitch = Random.Range(0.9f, 1.1f),
-                        //    SourceID = -1,
-                        //    Volume = 1.0f
-                        //}, 0.0f);
+                        SFXPlayer.Instance.PlaySFX(SnapAudioClip, transform.position, new SFXPlayer.PlayParameters()
+                        {
+                            Pitch = Random.Range(0.9f, 1.1f),
+                            SourceID = -1,
+                            Volume = 1.0f
+                        }, 0.0f);
 
                         OnDragStep.Invoke(posStep);
                     }
@@ -164,22 +164,22 @@ public class AxisDragInteractable : XRBaseInteractable
 
             if (step != m_CurrentStep)
             {
-                //SFXPlayer.Instance.PlaySFX(SnapAudioClip, transform.position, new SFXPlayer.PlayParameters()
-                //{
-                //    Pitch = Random.Range(0.9f, 1.1f),
-                //    SourceID = -1,
-                //    Volume = 1.0f
-                //}, 0.0f);
+                SFXPlayer.Instance.PlaySFX(SnapAudioClip, transform.position, new SFXPlayer.PlayParameters()
+                {
+                    Pitch = Random.Range(0.9f, 1.1f),
+                    SourceID = -1,
+                    Volume = 1.0f
+                }, 0.0f);
                 OnDragStep.Invoke(step);
             }
         }
     }
 
-    //void OnDrawGizmosSelected()
-    //{
-    //    Vector3 end = transform.position + transform.TransformDirection(LocalAxis.normalized) * AxisLength;
-        
-    //    Gizmos.DrawLine(transform.position, end);
-    //    Gizmos.DrawSphere(end, 0.01f);
-    //}
+    void OnDrawGizmosSelected()
+    {
+        Vector3 end = transform.position + transform.TransformDirection(LocalAxis.normalized) * AxisLength;
+
+        Gizmos.DrawLine(transform.position, end);
+        Gizmos.DrawSphere(end, 0.01f);
+    }
 }

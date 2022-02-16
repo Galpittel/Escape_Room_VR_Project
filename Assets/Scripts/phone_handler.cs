@@ -7,6 +7,7 @@ public class phone_handler : MonoBehaviour
     public GameObject phone_box;
     private AudioSource ring_source;
     private AudioSource dolly_source;
+    private bool alreadyAnswered = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +25,11 @@ public class phone_handler : MonoBehaviour
     {
         //We grabbed the phone
 
-        if (ring_source.isPlaying)
+        if (ring_source.isPlaying || alreadyAnswered)
         {
             ring_source.Pause();
             dolly_source.Play();
+            alreadyAnswered = true;
         }
     }
 

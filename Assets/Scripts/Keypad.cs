@@ -74,7 +74,7 @@ public class Keypad : MonoBehaviour
             VerifyButtonPushed();
         }
         onPressed.Invoke();
-        Debug.Log("is pressed");
+        //Debug.Log("is pressed");
 
     }
 
@@ -82,7 +82,7 @@ public class Keypad : MonoBehaviour
     {
         isPressed = false;
         onPressed.Invoke();
-        Debug.Log("is released");
+        //Debug.Log("is released");
 
     }
 

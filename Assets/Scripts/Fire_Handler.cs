@@ -21,23 +21,22 @@ public class Fire_Handler : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        //if (other.tag.Equals("Fire"))
-        //{
-        //    this.GetComponent<ParticleSystem>().Play();
-        //}
-        Debug.Log("TAL");
+        Debug.Log("HELLO MAN");
         if (other.tag.Equals("SpiderWeb"))
         {
             foreach (ParticleSystem fire in webFire)
             {
                 fire.Play();
             }
-            Invoke("Delay", 1.5f);
+            Invoke("FireDelay", 1.5f);
         }
 
-        void Delay()
+        void FireDelay()
         {
             other.SetActive(false);
+            //NEW
+            key.GetComponent<Rigidbody>().isKinematic = false;
+            //End_New
             key.GetComponent<Rigidbody>().useGravity = true;
             key.GetComponent<XRGrabInteractable>().enabled = true;
         }
