@@ -6,7 +6,7 @@ public class Check_Lever_Input : MonoBehaviour
 {
     public Text ourText;
     public int correctAns;
-    private int current_step = 0;
+    public int current_step = 0;
     public GameObject Lever_Manager;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class Check_Lever_Input : MonoBehaviour
     public void ourcheckFunc(int step)
     {
         current_step = step;
-        //ourText.text = step.ToString();
+        ourText.text = step.ToString();
         Lever_Manager.GetComponent<Lever_Manager>().validate();
     }
 

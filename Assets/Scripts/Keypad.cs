@@ -21,6 +21,7 @@ public class Keypad : MonoBehaviour
 
     private GameObject userPassword;
     private string password = "925";
+    public Data_Log ourDataLog;
 
     // Start is called before the first frame update
     void Start()
@@ -94,8 +95,9 @@ public class Keypad : MonoBehaviour
 
     void VerifyButtonPushed()
     {
-        if (password.Equals(userPassword.GetComponent<UnityEngine.UI.Text>().text))
+        if (password.Equals(userPassword.GetComponent<UnityEngine.UI.Text>().text)) //Mission 3 completed
         {
+            ourDataLog.trial["riddle3"] = (Time.time - ourDataLog.startSceneTime).ToString();
             FinalTeleport.SetActive(true);
             userPassword.GetComponent<UnityEngine.UI.Text>().text = "Correct";
             fountainAnimator.SetTrigger("fountainTrigger");

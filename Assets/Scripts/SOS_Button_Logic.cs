@@ -12,8 +12,8 @@ public class SOS_Button_Logic : MonoBehaviour
     private AudioSource room_sound;
     private AudioSource ring_source;
     private AudioSource song_source;
-    
 
+    public Data_Log ourDataLog;
     //public trySO so;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,8 @@ public class SOS_Button_Logic : MonoBehaviour
     {
         if (collision.collider.CompareTag("Skull") && !ring_source.isPlaying && !song_source.isPlaying) //The ring nor the song is playing already
         {
+            //Mission 2 completed
+            ourDataLog.trial["riddle2"] = (Time.time - ourDataLog.startSceneTime).ToString();
             //room_sound.mute = true;
             ring_source.Play();
             ourPhone.GetComponent<XRGrabInteractable>().enabled = true;

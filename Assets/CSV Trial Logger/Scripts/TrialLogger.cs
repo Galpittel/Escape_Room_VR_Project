@@ -50,6 +50,7 @@ public class TrialLogger : MonoBehaviour {
         header.Insert(1, "ppid");
         header.Insert(2, "start_time");
         header.Insert(3, "end_time");
+
     }
 
     private void InitDict()
@@ -101,7 +102,7 @@ public class TrialLogger : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
-
+        Debug.Log("BEFORE QUIT");
         if (output != null && dataOutputPath != null)
         {
             File.WriteAllLines(dataOutputPath, output.ToArray());

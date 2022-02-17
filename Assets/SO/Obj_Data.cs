@@ -20,6 +20,7 @@ public class Obj_Data : ScriptableObject
     public void Init()
     {
         currentWeight = 0;
+        goalReached = false;
 
     }
     public void updateWeight(int weight)

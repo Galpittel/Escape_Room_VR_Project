@@ -15,6 +15,8 @@ public class Table_Riddle_Manager : MonoBehaviour
     public Text our_UI;
     public GameObject teleport1;
     public GameObject teleport2;
+    public Data_Log ourDataLog;
+
     //private bool reachedGoal = false;
 
     //public GameObject[] go_arr; //GameObject array
@@ -64,8 +66,9 @@ public class Table_Riddle_Manager : MonoBehaviour
 
     private void checkGoal()
     {
-        if (SO.currentWeight == SO.goalWeight && bridgeAnimator != null && !SO.goalReached)
+        if (SO.currentWeight == SO.goalWeight && bridgeAnimator != null && !SO.goalReached) //Mission 4 completed
         {
+            ourDataLog.trial["riddle4"] = (Time.time - ourDataLog.startSceneTime).ToString();
             SO.goalReached = true;
             bridgeAnimator.SetTrigger("Bridge_anim");
             Invoke("DelaySetActive", 4f);

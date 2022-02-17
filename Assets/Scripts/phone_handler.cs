@@ -33,9 +33,14 @@ public class phone_handler : MonoBehaviour
         //    alreadyAnswered = true;
         //}
 
-        ring_source.Pause();
-        dolly_source.Play();
-        backgroundMusic.Pause();
+        if (ring_source!=null && dolly_source != null && backgroundMusic != null)
+        {
+
+            ring_source.Pause();
+            dolly_source.Play();
+            backgroundMusic.Pause();
+        }
+
     }
 
     public void hangUp() //Will be called once phone is returned to socket. Select entered event of PhoneSocket.

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc04c1b1fac5ed41b0c0ae2bbb2cf5a, type: 3}
   m_Name: Our_Obj_Data
   m_EditorClassIdentifier: 
-  currentWeight: 0
-  goalWeight: 50
-  goalReached: 0
+  currentWeight: 200
+  goalWeight: 250
+  goalReached: 1

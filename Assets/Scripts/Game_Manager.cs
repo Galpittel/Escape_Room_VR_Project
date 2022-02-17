@@ -8,11 +8,19 @@ public class Game_Manager : MonoBehaviour
 {
     public GameObject[] teleports;
     public ScoreKeeper score_keeper;
+    public Data_Log ourDataLog;
+    public GameObject editorButtons;
 
+    //void Awake()
+    //{
+    //    ourDataLog.Init();
+    //}
     // Start is called before the first frame update
     void Start()
     {
-        //score_keeper.Initialize("moshe", null);
+        #if UNITY_EDITOR
+            editorButtons.SetActive(true);
+        #endif
     }
 
     // Update is called once per frame

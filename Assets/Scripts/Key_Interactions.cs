@@ -12,6 +12,8 @@ public class Key_Interactions : MonoBehaviour
     public GameObject gameManager;
     public AudioClip key_sound;
 
+    public Data_Log ourDataLog;
+
 
     static int s_IDMax = 0;
 
@@ -51,13 +53,16 @@ public class Key_Interactions : MonoBehaviour
     //}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.Equals(first_key_hole))
+        if (other.gameObject.Equals(first_key_hole)) //Mission 1 completed
         {
+            ourDataLog.trial["riddle1"] = (Time.time - ourDataLog.startSceneTime).ToString();
             this.gameObject.SetActive(false);
             spare_key.SetActive(true);
             our_door.GetComponent<Animator>().SetTrigger("OpenDoor");
             our_door.GetComponent<AudioSource>().Play();
+            //CHECK
 
+            //ourDataLog.WriteToFile();
 
             //Finished Task 1
 
@@ -69,13 +74,13 @@ public class Key_Interactions : MonoBehaviour
             //gameManager.GetComponent<Game_Manager>().updateScore("LEVEL_NAME");
         }
 
-        if (other.gameObject.Equals(second_key_hole))
+        if (other.gameObject.Equals(second_key_hole)) //Mission 5 completed
         {
+            ourDataLog.trial["riddle5"] = (Time.time - ourDataLog.startSceneTime).ToString();
             this.gameObject.SetActive(false);
             spare_key.SetActive(true);
             our_door.GetComponent<Animator>().SetTrigger("SecondDoor");
             our_door.GetComponent<AudioSource>().Play();
-
 
             //Finished Task 1
 

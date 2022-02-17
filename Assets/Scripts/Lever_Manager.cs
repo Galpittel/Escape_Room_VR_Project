@@ -18,9 +18,11 @@ public class Lever_Manager : MonoBehaviour
     public AudioSource victoryMusic;
     public AudioSource backgroundMusic;
     public GameObject finalTeleport;
+    public Data_Log ourDataLog;
+    public Text finishText;
     void Start()
     {
-        
+        isCorrect = false;
     }
 
     // Update is called once per frame
@@ -29,13 +31,18 @@ public class Lever_Manager : MonoBehaviour
 
         if (isCorrect && !doorUnlocked && ourLever.transform.eulerAngles.x < 310f && ourLever.transform.eulerAngles.x > 20f)
         {
+            //Mission 6 completed
+            float endGameTime = Time.time - ourDataLog.startSceneTime;
+            ourDataLog.trial["riddle6"] = endGameTime.ToString();
             doorUnlocked = true;
-            ourText.text = "!!!!!";
             finalDoorAnimator.SetTrigger("OpenLastDoor");
             finalTeleport.SetActive(true);
             backgroundMusic.Stop();
             lastDoorSound.Play();
             Invoke("PlayVictoryMusic", 1.5f);
+            finishText.text += " " + ((int)(endGameTime/60)).ToString() + " minutes and " + ((int)(endGameTime%60)).ToString() + " seconds!";
+            //Write to file
+            ourDataLog.WriteToFile();
         }
     }
     private void PlayVictoryMusic()
