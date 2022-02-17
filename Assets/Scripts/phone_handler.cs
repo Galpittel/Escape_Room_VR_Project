@@ -7,6 +7,7 @@ public class phone_handler : MonoBehaviour
     public GameObject phone_box;
     private AudioSource ring_source;
     private AudioSource dolly_source;
+    public AudioSource backgroundMusic;
     private bool alreadyAnswered = false;
     // Start is called before the first frame update
     void Start()
@@ -25,17 +26,25 @@ public class phone_handler : MonoBehaviour
     {
         //We grabbed the phone
 
-        if (ring_source.isPlaying || alreadyAnswered)
-        {
-            ring_source.Pause();
-            dolly_source.Play();
-            alreadyAnswered = true;
-        }
+        //if (ring_source.isPlaying || alreadyAnswered)
+        //{
+        //    ring_source.Pause();
+        //    dolly_source.Play();
+        //    alreadyAnswered = true;
+        //}
+
+        ring_source.Pause();
+        dolly_source.Play();
+        backgroundMusic.Pause();
     }
 
     public void hangUp() //Will be called once phone is returned to socket. Select entered event of PhoneSocket.
     {
-        dolly_source.Pause();
+        if (dolly_source != null && backgroundMusic != null)
+        {
+            dolly_source.Pause();
+            backgroundMusic.Play();
+        }
     }
 
 

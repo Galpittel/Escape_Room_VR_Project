@@ -61,7 +61,7 @@ public class Keypad : MonoBehaviour
     {
         isPressed = true;
 
-        if (transform.tag.Equals("number"))
+        if (transform.tag.Equals("number") && !(userPassword.GetComponent<UnityEngine.UI.Text>().text.Equals("Correct")) && userPassword.GetComponent<UnityEngine.UI.Text>().text.Length < 5)
         {
             userPassword.GetComponent<UnityEngine.UI.Text>().text += transform.name;
         }

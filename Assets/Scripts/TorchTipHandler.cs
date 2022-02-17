@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TorchTipHandler : MonoBehaviour
 {
-    public GameObject Fire_Collider;
+    //public GameObject[] Fire_Collider; //All fire colliders
     public ParticleSystem[] torchFire;
     public ParticleSystem[] webFire;
     public GameObject key;
@@ -35,7 +35,7 @@ public class TorchTipHandler : MonoBehaviour
     //}
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.Equals(Fire_Collider))
+        if (other.gameObject.CompareTag("FireCollider"))
         {
             foreach (ParticleSystem fire in torchFire)
             {

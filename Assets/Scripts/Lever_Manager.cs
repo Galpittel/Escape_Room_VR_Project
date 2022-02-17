@@ -14,6 +14,10 @@ public class Lever_Manager : MonoBehaviour
     public GameObject ourLever;
     public Animator finalDoorAnimator;
     private bool doorUnlocked = false;
+    public AudioSource lastDoorSound;
+    public AudioSource victoryMusic;
+    public AudioSource backgroundMusic;
+    public GameObject finalTeleport;
     void Start()
     {
         
@@ -28,7 +32,15 @@ public class Lever_Manager : MonoBehaviour
             doorUnlocked = true;
             ourText.text = "!!!!!";
             finalDoorAnimator.SetTrigger("OpenLastDoor");
+            finalTeleport.SetActive(true);
+            backgroundMusic.Stop();
+            lastDoorSound.Play();
+            Invoke("PlayVictoryMusic", 1.5f);
         }
+    }
+    private void PlayVictoryMusic()
+    {
+        victoryMusic.Play();
     }
     public void validate()
     {

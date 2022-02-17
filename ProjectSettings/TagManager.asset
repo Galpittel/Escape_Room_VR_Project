@@ -17,6 +17,7 @@ TagManager:
   - WineGlass
   - Ring
   - Crystal
+  - FireCollider
   layers:
   - Default
   - TransparentFX
