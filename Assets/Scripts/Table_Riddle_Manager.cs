@@ -16,7 +16,7 @@ public class Table_Riddle_Manager : MonoBehaviour
     public GameObject teleport1;
     public GameObject teleport2;
     public Data_Log ourDataLog;
-
+    public AudioSource bridgeSound;
     //private bool reachedGoal = false;
 
     //public GameObject[] go_arr; //GameObject array
@@ -68,9 +68,13 @@ public class Table_Riddle_Manager : MonoBehaviour
     {
         if (SO.currentWeight == SO.goalWeight && bridgeAnimator != null && !SO.goalReached) //Mission 4 completed
         {
-            ourDataLog.trial["riddle4"] = (Time.time - ourDataLog.startSceneTime).ToString();
+            if (ourDataLog.trial != null)
+            {
+                ourDataLog.trial["riddle4"] = (Time.time - ourDataLog.startSceneTime).ToString();
+            }
             SO.goalReached = true;
             bridgeAnimator.SetTrigger("Bridge_anim");
+            bridgeSound.Play();
             Invoke("DelaySetActive", 4f);
             //teleport1.SetActive(true);
             //teleport2.SetActive(true); 

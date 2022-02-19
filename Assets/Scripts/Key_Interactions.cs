@@ -76,7 +76,10 @@ public class Key_Interactions : MonoBehaviour
 
         if (other.gameObject.Equals(second_key_hole)) //Mission 5 completed
         {
-            ourDataLog.trial["riddle5"] = (Time.time - ourDataLog.startSceneTime).ToString();
+            if (ourDataLog.trial != null)
+            {
+                ourDataLog.trial["riddle5"] = (Time.time - ourDataLog.startSceneTime).ToString();
+            }
             this.gameObject.SetActive(false);
             spare_key.SetActive(true);
             our_door.GetComponent<Animator>().SetTrigger("SecondDoor");

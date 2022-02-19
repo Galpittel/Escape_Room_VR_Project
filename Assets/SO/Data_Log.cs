@@ -26,7 +26,7 @@ public class Data_Log : ScriptableObject
 
     void Awake()
     {
-        Debug.Log("APP data path: " + Application.dataPath);
+        //Debug.Log("APP data path: " + Application.dataPath);
         //outputFolder = Application.dataPath + "/StreamingAssets" + "/output";
         outputFolder = Application.persistentDataPath + "/output";
         if (!Directory.Exists(outputFolder))

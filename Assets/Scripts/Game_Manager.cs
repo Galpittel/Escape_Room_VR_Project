@@ -7,19 +7,27 @@ using CameraFading;
 public class Game_Manager : MonoBehaviour
 {
     public GameObject[] teleports;
-    public ScoreKeeper score_keeper;
     public Data_Log ourDataLog;
     public GameObject editorButtons;
+    public Animator[] ourEditorAnimators;
 
-    //void Awake()
-    //{
-    //    ourDataLog.Init();
-    //}
+    void Awake()
+    {
+        #if UNITY_EDITOR
+                foreach (Animator a in ourEditorAnimators)
+                {
+                    a.enabled = true;
+                }
+                editorButtons.SetActive(true);
+        #endif
+
+
+    }
     // Start is called before the first frame update
     void Start()
     {
         #if UNITY_EDITOR
-            editorButtons.SetActive(true);
+                editorButtons.SetActive(true);
         #endif
     }
 

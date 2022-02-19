@@ -4020,11 +4020,12 @@ PrefabInstance:
     - target: {fileID: 1468619956333021640, guid: 3360cb73ba4ace14bb5ef7745fe15b72,
         type: 3}
       propertyPath: m_Text
-      value: '1. Omri - 12:48
-
-        2. Carly - 14:04
-
-        3. Doron - 16:20'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468619956333021686, guid: 3360cb73ba4ace14bb5ef7745fe15b72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1468619956660288328, guid: 3360cb73ba4ace14bb5ef7745fe15b72,
         type: 3}

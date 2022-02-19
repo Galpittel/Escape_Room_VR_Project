@@ -10,6 +10,7 @@ public class TorchTipHandler : MonoBehaviour
     public ParticleSystem[] webFire;
     public GameObject key;
     public GameObject spiderWeb;
+    public GameObject ourTorchLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class TorchTipHandler : MonoBehaviour
                 fire.Play();
 
             }
+            ourTorchLight.SetActive(true);
         }
         if (other.tag.Equals("SpiderWeb") && torchFire[0].isPlaying && !webFire[0].isPlaying)
         {

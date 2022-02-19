@@ -15,6 +15,7 @@ public class Scene_Manager : MonoBehaviour
     void Start()
     {
         start_sound = gameObject.GetComponent<AudioSource>();
+        LoadRanking();
         //Load_RankingData_From_CSV();
     }
 
@@ -23,7 +24,14 @@ public class Scene_Manager : MonoBehaviour
     {
         
     }
+    private void LoadRanking()
+    {
+        string ourRankingText = "1. " + "User " + PlayerPrefs.GetInt("FirstPlaceID").ToString() + " - " + ((int)(PlayerPrefs.GetFloat("FirstPlaceTime")/60)).ToString() + ":" + ((int)(PlayerPrefs.GetFloat("FirstPlaceTime") % 60)).ToString("00") +  "\r\n"
+                                + "2. " + "User " + PlayerPrefs.GetInt("SecondPlaceID").ToString() + " - " + ((int)(PlayerPrefs.GetFloat("SecondPlaceTime") / 60)).ToString() + ":" + ((int)(PlayerPrefs.GetFloat("SecondPlaceTime") % 60)).ToString("00") + "\r\n"
+                                + "3. " + "User " + PlayerPrefs.GetInt("ThirdPlaceID").ToString() + " - " + ((int)(PlayerPrefs.GetFloat("ThirdPlaceTime") / 60)).ToString() + ":" + ((int)(PlayerPrefs.GetFloat("ThirdPlaceTime") % 60)).ToString("00");
 
+        rankingText.text = ourRankingText;
+    }
     private void Load_RankingData_From_CSV()
     {
         //int prevUserId = PlayerPrefs.GetInt("UserId", 0); //If no Int of this name exists, the default is 0.

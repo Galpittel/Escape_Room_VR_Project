@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29617f617b3e374c8b9d8f860a74159, type: 3}
   m_Name: ourDataLog
   m_EditorClassIdentifier: 
-  ppid: 4
+  ppid: 3
   outputFolder: C:/Users/orisi/AppData/LocalLow/DefaultCompany/Escape_Room_New/output
   trialStarted: 1
   startSceneTime: 0
