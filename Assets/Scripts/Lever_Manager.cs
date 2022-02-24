@@ -57,7 +57,8 @@ public class Lever_Manager : MonoBehaviour
         float thirdPlaceTime = PlayerPrefs.GetFloat("ThirdPlaceTime", 99999f);
         float secondPlaceTime = PlayerPrefs.GetFloat("SecondPlaceTime", 99999f);
         float firstPlaceTime = PlayerPrefs.GetFloat("FirstPlaceTime", 99999f);
-        int currentPPID = ourDataLog.ppid; //Get current player ID
+        //int currentPPID = ourDataLog.ppid; //Get current player ID
+        int currentPPID = PlayerPrefs.GetInt("ppid");
 
         if (endTime < thirdPlaceTime) //Current player better than third place, replace them
         {

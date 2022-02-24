@@ -6,7 +6,7 @@ using System.IO;
 [CreateAssetMenu]
 public class Data_Log : ScriptableObject
 {
-    public int ppid; //ParticipantID
+    //public int ppid; //ParticipantID
     [HideInInspector]
     public Dictionary<string, string> trial; //Will contain ppid, riddleTime1 - riddleTime6, endTime
     List<string> header;
@@ -41,8 +41,13 @@ public class Data_Log : ScriptableObject
         trialStarted = true;
         InitHeader();
         InitDict();
-        ppid += 1;
-        trial["ppid"] = ppid.ToString();
+
+        //ppid += 1;
+        PlayerPrefs.SetInt("ppid", PlayerPrefs.GetInt("ppid") + 1);
+
+        //trial["ppid"] = ppid.ToString();
+        trial["ppid"] = PlayerPrefs.GetInt("ppid").ToString();
+
         //ppid = participantID;
         startSceneTime = Time.time;
         //header = customHeader;

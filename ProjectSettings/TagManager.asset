@@ -12,9 +12,7 @@ TagManager:
   - Bottle
   - Fire
   - SpiderWeb
-  - Hammer
   - Candle
-  - WineGlass
   - Ring
   - Crystal
   - FireCollider
@@ -41,7 +39,7 @@ TagManager:
   - 
   - Teleport
   - Interactable
-  - Climb
+  - 
   - 
   - 
   - 
