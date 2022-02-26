@@ -43,7 +43,7 @@ public class Data_Log : ScriptableObject
         InitDict();
 
         //ppid += 1;
-        PlayerPrefs.SetInt("ppid", PlayerPrefs.GetInt("ppid") + 1);
+        PlayerPrefs.SetInt("ppid", PlayerPrefs.GetInt("ppid", 0) + 1); //Added change, if "ppid" doesn't exist, return 0.
 
         //trial["ppid"] = ppid.ToString();
         trial["ppid"] = PlayerPrefs.GetInt("ppid").ToString();

@@ -24,11 +24,11 @@ public class Gaze : MonoBehaviour
         if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
         {
             // Your object is in the range of the camera, you can apply your behaviour
-            Debug.Log("IT IS IN");
+            //Debug.Log("IT IS IN");
         }
         else
         {
-            Debug.Log("IT IS OUT");
+            //Debug.Log("IT IS OUT");
 
         }
         //if(Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))

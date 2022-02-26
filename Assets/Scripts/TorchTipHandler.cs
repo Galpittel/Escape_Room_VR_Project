@@ -22,18 +22,7 @@ public class TorchTipHandler : MonoBehaviour
     {
         
     }
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("FIRE!");
-    //    if(collision.gameObject.Equals(Fire_Collider))
-    //    {
-    //        foreach (ParticleSystem fire in torchFire)
-    //        {
-    //            fire.Play();
 
-    //        }
-    //    }
-    //}
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("FireCollider"))

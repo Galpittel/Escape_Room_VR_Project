@@ -36,9 +36,9 @@ public class handPresence : MonoBehaviour
         }
 
         spawnedHandModel = Instantiate(handModelPrefab, transform);
-        Debug.Log("ORI1");
-        Debug.Log(spawnedHandModel);
-        Debug.Log("ORI2");
+        //Debug.Log("ORI1");
+        //Debug.Log(spawnedHandModel);
+        //Debug.Log("ORI2");
         handAnimator = spawnedHandModel.GetComponent<Animator>();
     }
     void UpdateHandAnimation()

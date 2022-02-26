@@ -21,7 +21,6 @@ public class Particle_Handler : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log("HERE!");
         if (other.gameObject.Equals(torchTip))
         {
             //this.GetComponent<ParticleSystem>().Play();

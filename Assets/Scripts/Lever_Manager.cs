@@ -101,10 +101,10 @@ public class Lever_Manager : MonoBehaviour
         }
         isCorrect = boolChecker;
 
-        if (isCorrect)
-        {
-            ourText.text = "YES";
-        }
+        //if (isCorrect)
+        //{
+        //    ourText.text = "YES";
+        //}
 
 
     }

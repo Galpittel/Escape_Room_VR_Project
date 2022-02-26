@@ -21,7 +21,7 @@ public class Fire_Handler : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log("HELLO MAN");
+        //Debug.Log("HELLO MAN");
         if (other.tag.Equals("SpiderWeb"))
         {
             foreach (ParticleSystem fire in webFire)
