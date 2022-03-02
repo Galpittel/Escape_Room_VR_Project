@@ -10,7 +10,6 @@ public class Lever_Manager : MonoBehaviour
     public GameObject[] lever_arr;
     [HideInInspector]
     public bool isCorrect = false;
-    public Text ourText;
     public GameObject ourLever;
     public Animator finalDoorAnimator;
     private bool doorUnlocked = false;
@@ -100,11 +99,6 @@ public class Lever_Manager : MonoBehaviour
             
         }
         isCorrect = boolChecker;
-
-        //if (isCorrect)
-        //{
-        //    ourText.text = "YES";
-        //}
 
 
     }
